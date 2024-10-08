@@ -1,15 +1,45 @@
-Source: template-repository
-Section: unknown
+Source: golang-github-pquerna-ffjson
+Section: devel
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Reinhard Tartler <siretart@tauware.de>
+Build-Depends: debhelper (>= 11),
+               dh-golang,
+               golang-any,
+               golang-github-google-gofuzz-dev,
+               golang-github-stretchr-testify-dev
+Standards-Version: 4.2.1
+Homepage: https://github.com/pquerna/ffjson
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-pquerna-ffjson
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-pquerna-ffjson.git
+XS-Go-Import-Path: github.com/pquerna/ffjson
+Testsuite: autopkgtest-pkg-go
 
-Package: template-repository
+Package: ffjson
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends: ${misc:Depends},
+         golang-github-pquerna-ffjson-dev
+Description: faster JSON serialization for Go
+ ffjson generates static MarshalJSON and UnmarshalJSON functions for
+ structures in Go. The generated functions reduce the reliance upon runtime
+ reflection to do serialization and are generally 2 to 3 times faster.
+ In cases where ffjson doesn't understand a Type involved, it falls back to
+ encoding/json, meaning it is a safe drop in replacement.  By using ffjson
+ your JSON serialization just gets faster with no additional code changes.
+ .
+ This package contains the ffjson executable.
+
+Package: golang-github-pquerna-ffjson-dev
+Architecture: all
+Depends: ${misc:Depends},
+         golang-github-google-gofuzz-dev,
+         golang-github-stretchr-testify-dev
+Description: faster JSON serialization for Go
+ ffjson generates static MarshalJSON and UnmarshalJSON functions for
+ structures in Go. The generated functions reduce the reliance upon runtime
+ reflection to do serialization and are generally 2 to 3 times faster.
+ In cases where ffjson doesn't understand a Type involved, it falls back to
+ encoding/json, meaning it is a safe drop in replacement.  By using ffjson
+ your JSON serialization just gets faster with no additional code changes.
+ .
+ This package contains the source code for other go programs to link against.

@@ -1,5 +1,12 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-github-pquerna-ffjson (0.0~git20181028.e517b90-1.1) unstable; urgency=medium
 
-  * Initial release
+  * Non maintainer upload by the Reproducible Builds team.
+  * No source change upload to rebuild on buildd with .buildinfo files.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Holger Levsen <holger@debian.org>  Fri, 08 Jan 2021 14:12:15 +0100
+
+golang-github-pquerna-ffjson (0.0~git20181028.e517b90-1) unstable; urgency=medium
+
+  * Initial release (Closes: #919278)
+
+ -- Reinhard Tartler <siretart@tauware.de>  Mon, 14 Jan 2019 17:31:56 -0500
