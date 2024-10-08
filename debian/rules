@@ -1,4 +1,7 @@
 #!/usr/bin/make -f
 
+# tests have a bogous import that confuses the debhelper
+export DH_GOLANG_EXCLUDES=github.com/pquerna/ffjson/tests
+
 %:
-	dh $@
+	dh $@ --buildsystem=golang --with=golang
